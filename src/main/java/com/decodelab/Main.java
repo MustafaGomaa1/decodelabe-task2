@@ -1,7 +1,47 @@
 package com.decodelab;
 
+import java.util.Scanner;
+
 public class Main {
     public static void main(String[] args) {
-        System.out.println("Hello world!");
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Calculate Your Score Average :");
+        boolean keepGoing = true;
+        while (keepGoing) {
+            System.out.print("How many Subjects do you have :");
+            int subjects = Integer.parseInt(sc.next());
+            int total = 0;
+            for (int i = 0; i < subjects; i++) {
+                System.out.print("\nEnter your " + (i + 1) + " Grade :");
+                int grade = Integer.parseInt(sc.next());
+                if (grade > 100 || grade < 0) {
+                    System.out.println("Please Enter Valid Grade!");
+                    break;
+                }
+                total += grade;
+            }
+            double ava = (double) total / subjects;
+            System.out.printf("Your Average is %.2f ", ava);
+            if (ava > 90) {
+                System.out.print("A\n");
+            } else if (ava > 80) {
+                System.out.print("B\n");
+            } else if (ava > 70) {
+                System.out.print("C\n");
+            } else if (ava > 60) {
+                System.out.print("D\n");
+            } else {
+                System.out.print("F\n");
+            }
+            System.out.println("Do you Want To Calculate Another Average : [Y/N]");
+            String answer = sc.next();
+            if (answer.toUpperCase().charAt(0) == 'Y') {
+                System.out.println("That's Sounds Good Ok Let's Start Again.");
+            } else {
+                System.out.println("Ok No Problem See You Next Time :)");
+                keepGoing = false;
+            }
+        }
+        sc.close();
     }
 }
