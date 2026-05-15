@@ -25,9 +25,9 @@ public class Main {
             System.out.println("\nDo you Want To Calculate Another Average : [Y/N]");
             String answer = sc.next();
             if (answer.toUpperCase().charAt(0) == 'Y') {
-                System.out.println("That's Sounds Good Ok Let's Start Again.");
+                System.out.println("\nThat's Sounds Good Ok Let's Start Again.\n");
             } else {
-                System.out.println("Ok No Problem See You Next Time :)");
+                System.out.println("\nOk No Problem See You Next Time :)");
                 keepGoing = false;
             }
         }
