@@ -5,7 +5,7 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        System.out.println("Calculate Your Score Average :");
+        System.out.println("\n====== AVERAGE CALCULATOR ======\n");
         boolean keepGoing = true;
         while (keepGoing) {
             System.out.print("How many Subjects do you have :");
@@ -21,8 +21,7 @@ public class Main {
                 total += grade;
             }
             double ava = (double) total / subjects;
-            System.out.printf("Your Average is %.2f ", ava);
-            determineGrade(ava);
+            System.out.printf("Your Average is %.2f %s\n", ava, determineGrade(ava));
             System.out.println("\nDo you Want To Calculate Another Average : [Y/N]");
             String answer = sc.next();
             if (answer.toUpperCase().charAt(0) == 'Y') {
