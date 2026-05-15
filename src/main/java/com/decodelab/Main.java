@@ -22,18 +22,8 @@ public class Main {
             }
             double ava = (double) total / subjects;
             System.out.printf("Your Average is %.2f ", ava);
-            if (ava > 90) {
-                System.out.print("A\n");
-            } else if (ava > 80) {
-                System.out.print("B\n");
-            } else if (ava > 70) {
-                System.out.print("C\n");
-            } else if (ava > 60) {
-                System.out.print("D\n");
-            } else {
-                System.out.print("F\n");
-            }
-            System.out.println("Do you Want To Calculate Another Average : [Y/N]");
+            determineGrade(ava);
+            System.out.println("\nDo you Want To Calculate Another Average : [Y/N]");
             String answer = sc.next();
             if (answer.toUpperCase().charAt(0) == 'Y') {
                 System.out.println("That's Sounds Good Ok Let's Start Again.");
@@ -43,5 +33,17 @@ public class Main {
             }
         }
         sc.close();
+    }
+
+    public static char determineGrade(double average) {
+        if (average >= 90)
+            return 'A';
+        if (average >= 80)
+            return 'B';
+        if (average >= 70)
+            return 'C';
+        if (average >= 60)
+            return 'D';
+        return 'F';
     }
 }
